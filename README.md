@@ -1,6 +1,6 @@
 # Rosemary; the resume explainer bot
 
-Bot which explains the details of a (currently my) resume. Mainly created to learn about [rasa](https://rasa.com), chatbots, and very basic NLP (intents, entities, tokenizer etc)
+Bot which explains the details of a (currently my) resume. Mainly created to learn about [rasa 2.x](https://rasa.com), chatbots, and very basic NLP (intents, entities, tokenizer etc)
 
 ## Installation
 
