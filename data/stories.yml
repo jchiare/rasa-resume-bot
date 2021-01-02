@@ -1,0 +1,168 @@
+version: '2.0'
+stories: 
+
+- story: Greet and give bot information happy path
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm 
+  - action: utter_which_skills
+
+- story: Greet + more info about work experience
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm 
+  - action: utter_which_skills
+  - intent: interest_work_experience
+  - action: action_work_experience
+  - slot_was_set: 
+    - skill: Work Experience
+  - action: utter_continue_interest
+
+- story: Greet + more info about tech skills
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm 
+  - action: utter_which_skills
+  - intent: interest_tech_skills
+  - action: action_tech_skills
+  - slot_was_set: 
+    - skill: Tech Skills
+  - action: utter_continue_interest
+
+- story: Greet + more info about leadership skills + ask for detailed info about leadership skills
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm 
+  - action: utter_which_skills
+  - intent: interest_leadership
+  - action: action_leadership
+  - slot_was_set: 
+    - skill: Leadership Skills
+  - action: utter_continue_interest
+  - intent: continue_skill
+  - action: action_deeper_details
+  - intent: appreciation
+  - action: utter_reply_to_thanks
+
+- story: Greet + more info about leadership skills + choose another skill
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm 
+  - action: utter_which_skills
+  - intent: interest_leadership
+  - action: action_leadership
+  - slot_was_set: 
+    - skill: Leadership Skills
+  - action: utter_continue_interest
+  - intent: other_skill
+  - action: utter_choose_new_skill
+  - action: utter_which_skills
+
+- story: Greet + more info about soft skills + ask for detailed info about soft skills
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm 
+  - action: utter_which_skills
+  - intent: interest_soft_skills
+  - action: action_soft_skills
+  - slot_was_set: 
+    - skill: Soft Skills
+  - action: utter_continue_interest
+  - intent: continue_skill
+  - action: action_deeper_details
+  - intent: appreciation
+  - action: utter_reply_to_thanks
+
+- story: Greet + more info about soft skills + choose another skill
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm 
+  - action: utter_which_skills
+  - intent: interest_soft_skills
+  - action: action_soft_skills
+  - slot_was_set: 
+    - skill: Soft Skills
+  - action: utter_continue_interest
+  - intent: other_skill
+  - action: utter_choose_new_skill
+  - action: utter_which_skills
+
+- story: Greet + info about tech skills + change to leadership skills + continue with leadership skills
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm
+  - action: utter_which_skills
+  - intent: interest_tech_skills
+  - action: action_tech_skills
+  - slot_was_set:
+    - skill: Tech Skills
+  - action: utter_continue_interest
+  - intent: other_skill
+  - action: utter_choose_new_skill
+  - action: utter_which_skills
+  - intent: interest_leadership
+  - action: action_leadership
+  - slot_was_set:
+    - skill: Leadership Skills
+  - action: utter_continue_interest
+  - intent: continue_skill
+  - action: action_deeper_details
+  - intent: appreciation
+  - action: utter_reply_to_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Story from Conversation ID d3ff403d97c24180b9d61c0ba5974bc9
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm
+  - action: utter_which_skills
+  - intent: interest_tech_skills
+  - action: action_tech_skills
+  - slot_was_set:
+    - skill: Tech Skills
+  - action: utter_continue_interest
+  - intent: continue_skill
+  - action: action_deeper_details
+  - intent: appreciation
+  - action: utter_reply_to_thanks
+
+- story: Story from Conversation ID 93dc388efc2b4fd4910f2d25646002d2
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: affirm
+  - action: utter_which_skills
+  - intent: interest_soft_skills
+  - action: action_soft_skills
+  - slot_was_set:
+    - skill: Soft Skills
+  - action: utter_continue_interest
+  - intent: other_skill
+  - action: utter_choose_new_skill
+  - action: utter_which_skills
+  - intent: interest_tech_skills
+  - action: action_tech_skills
+  - slot_was_set:
+    - skill: Tech Skills
+  - action: utter_continue_interest
+  - intent: continue_skill
+  - action: action_deeper_details
+  - intent: appreciation
+  - action: utter_reply_to_thanks
+  
+- story: Greet and give bot information sad path
+  steps:
+  - intent: greet
+  - action: utter_greet_and_bot_info
+  - intent: deny
+  - action: utter_neutral_goodbye

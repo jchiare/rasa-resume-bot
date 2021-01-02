@@ -1,0 +1,102 @@
+version: "2.0"
+nlu:
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ok
+    - yeah
+    - ya
+    - sure
+    - sounds good
+    - yes please
+    - Yes
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - nah
+- intent: interest_work_experience
+  examples: |
+    - past work experience
+    - past experience
+    - what does he have experience in
+    - Past work experience
+    - I'd like to learn more about his work experiences
+- intent: interest_tech_skills
+  examples: |
+    - can he code
+    - technical skills
+    - tech abilities
+    - javascript
+    - python
+    - is he a developer
+    - I'd like to learn more about his technical skills
+- intent: interest_leadership
+  examples: |
+    - Leadership ability
+    - lead a team
+    - Lead a project
+    - Create process
+    - determination
+    - I'd like to learn more about his leadership ability
+- intent: interest_soft_skills
+  examples: |
+    - People skills
+    - Soft skills
+    - Attitude
+    - Culture Fit
+    - positivity
+    - I'd like to learn more about his soft skills
+- intent: bot_challenge
+  examples: |
+    - Are you a bot?
+    - am I talking to a human?
+    - is this a chatbot
+    - are you a bot
+    - is this a real person
+    - you're a bot, aren't you?
+- intent: greet
+  examples: |
+    - Hi
+    - Hey!
+    - Hallo
+    - hi
+    - hello
+    - Good day
+    - Good morning
+    - howdy
+    - Hey there
+    - hi!
+    - hi hi
+    - hello?
+    - hi man
+    - hey there
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - see you later
+    - peace
+    - see ya
+    - that's all, bye
+    - that's all I need - thanks
+- intent: appreciation
+  examples: |
+    - thank you
+    - thanks
+    - cool, thanks
+    - got it, thank you!
+    - you're the best, thanks
+    - perfect thank you
+    - thank you!
+    - cool thanks
+    - cool thank you

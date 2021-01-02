@@ -1,0 +1,52 @@
+version: '2.0'
+rules:
+
+- rule: Interest in work experience
+  steps:
+  - intent: interest_work_experience
+  - action: action_work_experience
+  - action: utter_continue_interest
+
+- rule: Interest in tech skills
+  steps:
+  - intent: interest_tech_skills
+  - action: action_tech_skills
+  - action: utter_continue_interest
+
+- rule: Interest in leadership skills
+  steps:
+  - intent: interest_leadership
+  - action: action_leadership
+  - action: utter_continue_interest
+
+- rule: Interest in soft skills
+  steps:
+  - intent: interest_soft_skills
+  - action: action_soft_skills
+  - action: utter_continue_interest
+
+- rule: Continue with current skill
+  steps: 
+    - intent: continue_skill
+    - action: action_deeper_details
+
+- rule: Learn about a new skill
+  steps:
+    - intent: other_skill
+    - action: utter_choose_new_skill
+    - action: utter_which_skills
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_rephrase
+
+- rule: Answer bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_i_am_a_bot
+
+- rule: Say good bye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye

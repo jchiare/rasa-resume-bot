@@ -1,0 +1,69 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- bot_challenge
+- nlu_fallback
+- goodbye
+- affirm
+- deny
+- interest_work_experience
+- interest_tech_skills
+- interest_leadership
+- interest_soft_skills
+- continue_skill
+- other_skill
+- appreciation
+slots:
+  skill:
+    type: categorical
+    values:
+    - work experience
+    - tech skills
+    - leadership skills
+    - soft skills
+responses:
+  utter_greet_and_bot_info:
+  - text: "Hey there :)\nI tell you about the Resume of Jay Chiarella.\nAre you interested?"
+  - text: "Hi!\nI tell you about the professional resume of Jay Chiarella.\nWant to\
+      \ learn about it?"
+  utter_neutral_goodbye:
+  - text: I'll let you go - Goodbye :)
+  - text: Ok. I'll let you disconnect. Thanks for stopping bye!
+  utter_which_skills:
+  - buttons:
+    - payload: /interest_work_experience
+      title: Work Experience
+    - payload: /interest_tech_skills
+      title: Technical Skills
+    - payload: /interest_leadership
+      title: Leadership
+    - payload: /interest_soft_skills
+      title: Soft Skills
+    text: Which part of his resume would you like to hear about?
+  utter_continue_interest:
+  - buttons:
+    - payload: /continue_skill
+      title: Learn more about '{skill}'
+    - payload: /other_skill
+      title: A different skill
+    text: Would you like to hear more about this '{skill}' or another skill?
+  utter_choose_new_skill:
+  - text: Alright then. Please choose a new skill so that you can learn more!
+  utter_reply_to_thanks:
+  - text: No problem!
+  - text: Glad to help :)
+  utter_i_am_a_bot:
+  - text: I am a bot, powered by Rasa
+  utter_rephrase:
+  - text: I'm sorry, I didn't understand your last message. Can you please rephrase?
+  utter_goodbye:
+  - text: Goodbye! Thanks for chatting today
+  - text: Chow! Have a great day
+actions:
+- action_work_experience
+- action_tech_skills
+- action_leadership
+- action_soft_skills
+- action_deeper_details
